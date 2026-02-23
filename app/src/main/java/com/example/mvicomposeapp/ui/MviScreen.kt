@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kotlinx.coroutines.flow.collectLatest
 import com.example.mvicomposeapp.MainViewModel
-import com.example.mvicomposeapp.UiEffect
-import com.example.mvicomposeapp.UiIntent
+import com.example.mvicomposeapp.mvi.UiEffect
+import com.example.mvicomposeapp.mvi.UiIntent
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
