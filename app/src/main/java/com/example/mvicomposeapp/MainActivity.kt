@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.mvicomposeapp.domain.DefaultSubmitNameUseCase
 import com.example.mvicomposeapp.ui.MviScreen
 
 class MainActivity : ComponentActivity() {
@@ -14,7 +15,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             MaterialTheme {
                 Surface {
-                    val vm: MainViewModel = viewModel()
+                    val vm: MainViewModel = viewModel(
+                        factory = MainViewModelFactory(
+                            submitNameUseCase = DefaultSubmitNameUseCase()
+                        )
+                    )
                     MviScreen(viewModel = vm)
                 }
             }
